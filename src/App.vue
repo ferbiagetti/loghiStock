@@ -1,32 +1,29 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view/>
+    <app-layout v-if="isLogged" />
+    <login  v-else />
   </div>
 </template>
-
-<style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
-
-#nav {
-  padding: 30px;
-
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
+<script>
+import AppLayout from './components/AppLayout.vue'
+import Login from './components/login/Login.vue'
+export default {
+  components: {AppLayout, Login  },
+  computed: {
+    isLogged() {
+      return localStorage.getItem('email')
     }
   }
 }
+</script>
+<style lang="scss">
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+#app {
+  font-family: 'Open Sans', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  padding: 0;
+}
+
 </style>
