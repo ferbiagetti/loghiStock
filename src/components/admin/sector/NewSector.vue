@@ -39,6 +39,7 @@ export default {
       const newSector = { name: this.form.name}
       this.$emit('loadSector', newSector)
       this.form.name = null
+      this.$v.form.$reset()
     },
     validateState(name) {
       const { $dirty, $error } = this.$v.form[name];

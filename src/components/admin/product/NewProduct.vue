@@ -43,11 +43,19 @@ export default {
       }
       const newProd = { name: this.form.name, sector: this.form.sector }
       this.$emit('newProduct', newProd)
+      this.resetForm()
     },
     validateState(name) {
       const { $dirty, $error } = this.$v.form[name];
       return $dirty ? !$error : null;
     },
+    resetForm() {
+      this.form = {
+        name: null,
+        sector: null
+      }
+      this.$v.form.$reset()
+    }
   },
   computed: {
     sectionOptions () {
