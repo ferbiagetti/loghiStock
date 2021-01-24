@@ -1,5 +1,5 @@
 <template>
-  <b-card class="text-center" title="Nuevo Rubro">
+  <b-card class="text-center" header="Nuevo Rubro">
     <b-form @submit.prevent="onSubmitSector">
       <b-form-group
         id="sector-label-name"

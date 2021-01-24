@@ -2,6 +2,7 @@
   <b-card>
     <b-table
       :items="sectorList"
+      thead-class="table-header"
       :fields="[{key:'name', sortable: true, label: 'Sector'}, {key:'action', sortable: false, label: ''}]"
       :small="true"
       responsive="sm">

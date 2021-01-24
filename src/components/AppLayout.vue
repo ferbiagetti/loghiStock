@@ -12,10 +12,16 @@ export default {
   components: { Navbar }
 }
 </script>
-<style lang="scss" scoped>
+<style lang="scss">
 .layout {
   background-color: #ebebeb;
   height: 100vh;
   width: 100%;
+}
+.table-header {
+  background-color: rgba(0, 0, 0, 0.03);
+}
+th:focus {
+    outline: 0 !important;
 }
 </style>

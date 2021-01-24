@@ -2,9 +2,10 @@
   <b-card>
     <b-table
       :items="productList"
+      thead-class="table-header"
       :fields="[{key:'name', sortable: true, label: 'Producto'}, {key:'sector', sortable: true, label: 'Rubro'}, {key:'action', sortable: false, label: ''}]"
       :small="true">
-    
+
     <template #cell(name)="row">
       <span>{{row.item.name}}</span>
     </template>

@@ -106,7 +106,7 @@ h1 {
 .login-container {
   background-color: #d8d5d5;
   border: #d8d5d5 1px solid;
-  border-radius: 5px;
+  border-radius: 15px;
   box-shadow: 10px 10px 5px #aaaaaa;
 }
 

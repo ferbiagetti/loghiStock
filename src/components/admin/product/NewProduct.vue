@@ -1,5 +1,5 @@
 <template>
-  <b-card class="text-center" title="Nuevo Producto">
+  <b-card class="text-center" header="Nuevo Producto">
     <b-form @submit.prevent="onSubmitProduct">
       <b-form-group>
         <b-form-input
