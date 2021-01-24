@@ -6,10 +6,12 @@
         label-for="sector-name">
         <b-form-input
           id="sector-name"
+          :state="validateState('name')"
           v-model="form.name"
           type="text"
           placeholder="Ingrese su rubro"
         ></b-form-input>
+        <b-form-invalid-feedback id="password-error text-left">El nombre del rubro es requerido</b-form-invalid-feedback>
       </b-form-group>
       <b-button type="submit" variant="primary">Agregar</b-button>
     </b-form>
@@ -37,7 +39,11 @@ export default {
       const newSector = { name: this.form.name}
       this.$emit('loadSector', newSector)
       this.form.name = null
-    }
+    },
+    validateState(name) {
+      const { $dirty, $error } = this.$v.form[name];
+      return $dirty ? !$error : null;
+    },
   },
   validations: {
     form: {

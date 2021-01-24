@@ -2,10 +2,10 @@
   <b-card>
     <b-table
       :items="productList"
-      :fields="['nombre', 'sector', 'action']"
+      :fields="[{key:'name', sortable: true, label: 'Producto'}, {key:'sector', sortable: true, label: 'Rubro'}, {key:'action', sortable: false, label: ''}]"
       :small="true">
     
-    <template #cell(nombre)="row">
+    <template #cell(name)="row">
       <span>{{row.item.name}}</span>
     </template>
     <template #cell(sector)="row">

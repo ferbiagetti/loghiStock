@@ -1,9 +1,9 @@
 <template>
   <b-row>
-    <b-col xs="12" sm="6" md="4" xl="3">
+    <b-col sm="12" md="4" xl="3">
       <new-sector @loadSector="loadNewSector" />
     </b-col>
-    <b-col xs="12" sm="6" md="8" xl="9">
+    <b-col sm="12" md="8" xl="9" class="mt-3 mt-md-0">
       <sector-list @deleteRow="deleteRow" :sectorList="sectorList" />
     </b-col>
   </b-row>

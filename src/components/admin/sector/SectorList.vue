@@ -2,8 +2,9 @@
   <b-card>
     <b-table
       :items="sectorList"
-      :fields="['nombre', 'action']"
-      :small="true">
+      :fields="[{key:'name', sortable: true, label: 'Sector'}, {key:'action', sortable: false, label: ''}]"
+      :small="true"
+      responsive="sm">
     
     <template #cell(nombre)="row">
       <span>{{row.item.name}}</span>
@@ -34,4 +35,8 @@ export default {
   .table thead th { 
     border-top: none !important;
   }
+  
+  table .flip-list{
+  transition: transform 1s;
+}
 </style>

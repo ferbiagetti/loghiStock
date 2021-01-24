@@ -3,9 +3,7 @@
     <b-navbar type="dark" variant="dark" class="nav-height">
       <b-nav-item href="#">Loghinet</b-nav-item>
       <b-navbar-nav class="ml-auto">
-      <b-button @click="logout" variant="outline-danger">
-        <b-icon icon="power"></b-icon> Salir
-      </b-button>
+        <b-button @click="logout" class="logout-btn p-md-1 p-xs-0" variant="outline-danger" size="sm"><b-icon icon="power"></b-icon> Salir</b-button>
       </b-navbar-nav>
     </b-navbar>
 
@@ -29,6 +27,11 @@ export default {
     a {
       color: #5cb9ce;
     }
+  }
+
+  .logout-btn {
+    max-height: 4vh;
+    padding: 0;
   }
 
   .nav-height {

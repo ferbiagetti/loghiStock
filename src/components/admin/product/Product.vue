@@ -1,9 +1,9 @@
 <template>
   <b-row>
-    <b-col xs="12" sm="6" md="4" xl="3">
+    <b-col sm="12" md="4" xl="3">
       <new-product  @newProduct="addProduct" />
     </b-col>
-    <b-col xs="12" sm="6" md="8" xl="9">
+    <b-col sm="12" md="8" xl="9" class="mt-3 mt-md-0">
       <product-list  @deleteRow="deleteRow" :productList="productList" />
     </b-col>
   </b-row>

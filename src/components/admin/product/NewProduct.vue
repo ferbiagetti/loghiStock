@@ -5,13 +5,16 @@
         <b-form-input
           id="product-name"
           v-model="form.name"
+          :state="validateState('name')"
           type="text"
           placeholder="Ingrese el nombre del producto"
         ></b-form-input>
+        <b-form-invalid-feedback id="password-error text-left">El nombre del producto es requerido</b-form-invalid-feedback>
       </b-form-group>
 
       <b-form-group>
-        <b-form-select v-model="form.sector" :options="sectionOptions"></b-form-select>
+        <b-form-select :state="validateState('sector')" v-model="form.sector" :options="sectionOptions"></b-form-select>
+        <b-form-invalid-feedback id="password-error text-left">Seleccione un rubro</b-form-invalid-feedback>
       </b-form-group>
       
       <b-button type="submit" variant="primary">Agregar</b-button>
@@ -34,9 +37,17 @@ export default {
   },
   methods: {
     onSubmitProduct () {
+      this.$v.form.$touch();
+      if(this.$v.form.$error) {
+        return;
+      }
       const newProd = { name: this.form.name, sector: this.form.sector }
       this.$emit('newProduct', newProd)
-    }
+    },
+    validateState(name) {
+      const { $dirty, $error } = this.$v.form[name];
+      return $dirty ? !$error : null;
+    },
   },
   computed: {
     sectionOptions () {
