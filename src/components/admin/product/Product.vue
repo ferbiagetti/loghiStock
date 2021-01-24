@@ -25,7 +25,7 @@ export default {
       localStorage.setItem('products', JSON.stringify(this.productList));
     },
     deleteRow (row) {
-      this.sectorList = this.productList.filter(prod => prod.nombre !== row);
+      this.productList = this.productList.filter(prod => prod.nombre !== row);
       this.$bvToast.toast('El producto se elimino correctamente ', {
         title: `Exito`,
         variant: 'success',
